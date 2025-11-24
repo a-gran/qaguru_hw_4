@@ -91,8 +91,8 @@ pages = (len(email["sent_text"]) + 499) // 500
 
 
 # 12. Проверьте пустоту темы и тела письма: создайте переменные is_subject_empty, is_body_empty в котором будет хранится что тема письма содержит данные.
-is_subject_empty = not bool(email["subject"])
-is_body_empty = not bool(email["body"])
+is_subject_empty = not email["subject"].strip()
+is_body_empty = not email["body"].strip()
 
 
 # 13. Создайте «маску» e-mail отправителя: первые 2 символа логина + "***@" + домен.
