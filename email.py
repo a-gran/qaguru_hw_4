@@ -90,19 +90,22 @@ email["short_body"] = re.sub(r"\s+", " ", email["body"])
 # 6. Списки доменов: создайте список личных доменов и список корпоративных доменов
 
 person_domains = ['gmail.com','list.ru', 'yahoo.com','outlook.com','hotmail.com','icloud.com','yandex.ru','mail.ru','list.ru','bk.ru','inbox.ru']
-print('person_domains: ', person_domains)
-print('person_domains: ', len(person_domains))
+# print('person_domains: ', person_domains)
+# print('person_domains: ', len(person_domains))
 company_domains = ['company.ru','corporation.com','university.edu','organization.org','company.ru', 'business.net']
-print('company_domains: ', company_domains)
-print('company_domains: ', len(company_domains))
-print('-----------------')
+# print('company_domains: ', company_domains)
+# print('company_domains: ', len(company_domains))
+# print('-----------------')
 person_domains = set(person_domains)
-print('person_domains: ', person_domains)
-print('person_domains: ', len(person_domains))
+# print('person_domains: ', person_domains)
+# print('person_domains: ', len(person_domains))
 company_domains = set(company_domains)
-print('company_domains: ', company_domains)
-print('company_domains: ', len(company_domains))
+# print('company_domains: ', company_domains)
+# print('company_domains: ', len(company_domains))
 
 # 7. Проверьте что в списке личных и корпоративных доменов нет пересечений:
 # ни один домен не должен входить в оба списка одновременно.
 
+duplicates = company_domains & person_domains
+
+# print(f"Есть пересечение: {duplicates}" if duplicates else "Пересечения нет")
