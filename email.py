@@ -9,7 +9,7 @@ import re
 email= {}
 
 email['subject'] = 'Quarterly Report'
-email['from'] = 'Alice.Cooper@Company'
+email['from'] = 'Alice.Cooper@company.ru'
 email['to'] = 'bob_smith@Gmail.com'
 email['body'] = 'Hello Bob,\n\tHere is the quarterly report.\n\tPlease review and let me know your feedback.\n\nBest,\nAlice'
 
@@ -103,9 +103,20 @@ company_domains = set(company_domains)
 # print('company_domains: ', company_domains)
 # print('company_domains: ', len(company_domains))
 
+
 # 7. Проверьте что в списке личных и корпоративных доменов нет пересечений:
 # ни один домен не должен входить в оба списка одновременно.
 
 duplicates = company_domains & person_domains
 
 # print(f"Есть пересечение: {duplicates}" if duplicates else "Пересечения нет")
+
+
+# 8.  Проверьте «корпоративность» отправителя: создайте булеву переменную is_corporate, равную результату проверки вхождения домена отправителя в список корпоративных доменов.
+
+if email['from'].split('@')[1] in company_domains:
+    is_corporate = True
+else: 
+    is_corporate = False
+
+# print(is_corporate)
